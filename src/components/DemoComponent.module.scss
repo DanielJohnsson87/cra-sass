@@ -1,0 +1,26 @@
+@import "../styles/typography";
+@import "../styles/settings";
+
+.header {
+  @include heading1;
+  color: $color-base;
+}
+
+.subheader {
+  @include heading4;
+  color: $color-primary;
+}
+
+.text {
+  @include bodyL;
+}
+
+.box {
+  padding: 20px;
+  background: $color-base;
+  border-radius: $border-radius-base;
+  box-shadow: $box-shadow-md;
+  .text {
+    @include bodyL(1);
+  }
+}
