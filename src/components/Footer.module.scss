@@ -1,0 +1,13 @@
+@import "../styles/settings";
+@import "../styles/typography";
+
+.container {
+  background: $color-secondary;
+  padding: $spacing-xl;
+  margin-top: $spacing-xl;
+}
+
+.footerText {
+  @include bodyS(1);
+  text-align: center;
+}

@@ -1,3 +1,7 @@
+:root {
+  --main-bg-color: #f4633a;
+}
+
 /////////////////////////////////
 // Spacing
 /////////////////////////////////
@@ -9,12 +13,13 @@ $spacing-s: 4px;
 /////////////////////////////////
 // Colors
 /////////////////////////////////
-$color-base: #102650;
+$color-base: #051c2c;
 $color-negative: #fff;
-$color-primary: #8186f7;
-$color-secondary: #bfe9aa;
+$color-primary: #3a7456;
+$color-secondary: #0085ca;
+$color-tertiary: #f4633a;
 
-$color-border: #d6d6d6;
+$color-border: #eee;
 $color-input-bg: #efefef;
 $color-invalid: #cc0000;
 $color-success: #58cc5e;

@@ -1,9 +1,15 @@
+// Import the styles that we need for this module.
+// All variables & mixins will be available in thie file
 @import "../styles/typography";
 @import "../styles/settings";
+@import "../styles/transitions";
+// 🤷‍♂️ Maybe we could have something called elements or something similar.
+// It would contain simple css based components.
+@import "../styles/elements/card";
 
 .header {
-  @include heading1;
-  color: $color-base;
+  @include heading1; // Use a mixin with the @include keyword
+  color: $color-base; // Use a variable like this
 }
 
 .subheader {
@@ -15,12 +21,34 @@
   @include bodyL;
 }
 
-.box {
-  padding: 20px;
-  background: $color-base;
-  border-radius: $border-radius-base;
-  box-shadow: $box-shadow-md;
+.card {
+  @include card("dark");
+  @include transition-fast(
+    background
+  ); // Set what property we want to transition
+
   .text {
+    // Add 1 as a param to tell the mixin to return the inverted text style
+    // I think it's possible to work with other values instead of a number.
+    // Like strings or booleans. So we could probably do something like bodyL("inverted") too.
     @include bodyL(1);
   }
+}
+
+.cardTransparent {
+  @include card();
+  .text {
+    @include bodyL;
+  }
+}
+
+.cssVariableText {
+  @include bodyL;
+  color: var(--main-bg-color);
+  // We can't use sass or less functions on css variables. Like this. 👇
+  // 🚨 color: lighten(var(--main-bg-color), 50%);
+  // Or do sass/less calculations with the values
+  // 🚨 width: var(--some-css-value) * 10;
+  // But we can let css handle the calculations
+  // 🌈 width: calc(var(--some-css-value) * 10);
 }
